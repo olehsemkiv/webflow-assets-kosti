@@ -1,0 +1,80 @@
+  .text-image_divider.animate {
+    width: 100%;
+  }
+
+  body._lock {
+    overflow: hidden;
+  }
+
+  .menu_icon {
+    z-index: 1000;
+    position: relative;
+    width: 40px;
+    height: 12px;
+    cursor: pointer;
+  }
+
+  .menu_icon div,
+  .menu_icon::before,
+  .menu_icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #fff;
+    transition: all .4s;
+  }
+
+  .menu_icon::before,
+  .menu_icon::after {
+    content: "";
+  }
+
+  .menu_icon::before {
+    top: 0;
+  }
+
+  .menu_icon::after {
+    bottom: 0;
+  }
+
+  .menu_icon div {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  .menu_icon._active div {
+    transform: scale(0) translate(0px, -50%);
+  }
+
+  .menu_icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+
+  .menu_icon._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+
+
+  .header_menu._active {
+    transform: translateY(0);
+  }
+
+
+  .header.header-dark .menu_icon div,
+  .header.header-dark .menu_icon::before,
+  .header.header-dark .menu_icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #000;
+  }
+
+  .header.header-dark .nav_logo-text {
+    color: #000;
+  }
