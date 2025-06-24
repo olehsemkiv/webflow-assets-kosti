@@ -84,7 +84,13 @@ if (swiperHeroEl) {
 
 // Splide: Brands Line
 const brandsLineEl = document.querySelector('#brands-line');
-if (brandsLineEl && typeof Splide !== 'undefined' && window.splide?.Extensions) {
+
+if (
+  brandsLineEl &&
+  typeof Splide !== 'undefined' &&
+  window.splide?.Extensions &&
+  window.innerWidth < 767
+) {
   new Splide(brandsLineEl, {
     type: 'loop',
     drag: 'free',
@@ -100,6 +106,7 @@ if (brandsLineEl && typeof Splide !== 'undefined' && window.splide?.Extensions) 
     arrows: false,
   }).mount(window.splide.Extensions);
 }
+
 
 // Swiper: Multiple .colections_list
 const colectionLists = document.querySelectorAll(".colections_list");
